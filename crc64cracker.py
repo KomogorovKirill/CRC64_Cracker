@@ -58,10 +58,13 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(f"Using: {sys.argv[0]} <crc64_sum> [prefix]")
         exit(1)
+    elif len(sys.argv) == 3:
+        header = sys.argv[2]
+    else:
+        print(f"Using: {sysargv[0]} <crc64_sum> [prefix]")
+        exit(1)
     header = ""
     getTable()
-    if len(sys.argv) == 3:
-        header = sys.argv[2]
     try:
         forge = int(sys.argv[1])
     except:
